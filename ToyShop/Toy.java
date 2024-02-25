@@ -1,9 +1,11 @@
 package ToyShop;
 
+import java.util.Objects;
+
 public class Toy implements Comparable<Toy>{
     private final int id;
     private final String name;
-    int frequency;
+    private int frequency;
 
     public Toy(int id, String name, int frequency) {
         this.id = id;
@@ -22,6 +24,19 @@ public class Toy implements Comparable<Toy>{
     public int getFrequency() {
         return frequency;
     }
+
+    public void setFrequency(int frequency) {
+        this.frequency = frequency;
+    }
+    @Override
+    public String toString() {
+        return "Toy{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", frequency=" + frequency +
+                '}';
+    }
+
 
     @Override
     public int compareTo(Toy o) {

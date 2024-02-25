@@ -12,7 +12,7 @@ public class ToyQueue {
     public void setFrequency(int toyId, int newFrequency) {
         for (Toy toy : toyQueue) {
             if (toy.getId() == toyId) {
-                toy.frequency = newFrequency;
+                toy.setFrequency(newFrequency);
                 toyQueue = new PriorityQueue<>(toyQueue);
                 break;
             }
