@@ -1,7 +1,5 @@
 package ToyShop;
 
-import java.util.Objects;
-
 public class Toy implements Comparable<Toy>{
     private final int id;
     private final String name;
@@ -15,10 +13,6 @@ public class Toy implements Comparable<Toy>{
 
     public int getId() {
         return id;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public int getFrequency() {
