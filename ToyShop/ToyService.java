@@ -10,24 +10,34 @@ public class ToyService {
         RandomToy randomToy = new RandomToy();
 
         toyQueue.put(1, "конструктор", 2);
-        toyQueue.put(2, "робот",2);
+        toyQueue.put(2, "робот", 2);
         toyQueue.put(3, "кукла", 3);
 
-        toyQueue.setFrequency(2,5);
+        toyQueue.setFrequency(2, 5);
 
         String filename = "results.txt";
 
         try (FileWriter writer = new FileWriter(filename)) {
             for (int i = 0; i < 10; i++) {
+                System.out.println("Before addPrizeToy: ");
+                toyQueue.printPrizeToys();
+
+                toyQueue.addPrizeToy();
+
+                System.out.println("After addPrizeToy: ");
+                toyQueue.printPrizeToys();
+
                 int weight = randomToy.getRandomToy();
                 String result = randomToy.getRandomToy(weight);
+
                 System.out.println("Магазин игрушек поздравляет вас, Пользователь " + (i + 1) + ": " + result);
                 writer.write("Магазин игрушек поздравляет вас, Пользователь " + (i + 1) + ": " + result + "\n");
-            }
 
+                toyQueue.getPrizeToy();
+                toyQueue.removeProcessedToys();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

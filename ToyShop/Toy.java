@@ -1,6 +1,6 @@
 package ToyShop;
 
-public class Toy implements Comparable<Toy>{
+class Toy implements Comparable<Toy>{
     private final int id;
     private final String name;
     private int frequency;
@@ -17,6 +17,10 @@ public class Toy implements Comparable<Toy>{
 
     public int getFrequency() {
         return frequency;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setFrequency(int frequency) {
